@@ -1,37 +1,56 @@
 import React, { useState, useEffect } from 'react';
 
-const Checkbox = props => {
-  const {
-    borderColor,
-    borderRadius,
-    borderStyle,
-    borderWidth,
-    checkbox,
-    className,
-    checked,
-    containerClassName,
-    containerStyle,
-    label,
-    labelClassName,
-    labelStyle,
-    name,
-    onChange,
-    reference,
-    right,
-    size,
-    style,
-    value,
-    icon
-  } = props;
-  const [check, setCheck] = useState(checked);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-  const toggle = e => {
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+var Checkbox = function Checkbox(props) {
+  var borderColor = props.borderColor,
+      borderRadius = props.borderRadius,
+      borderStyle = props.borderStyle,
+      borderWidth = props.borderWidth,
+      checkbox = props.checkbox,
+      className = props.className,
+      checked = props.checked,
+      containerClassName = props.containerClassName,
+      containerStyle = props.containerStyle,
+      label = props.label,
+      labelClassName = props.labelClassName,
+      labelStyle = props.labelStyle,
+      name = props.name,
+      onChange = props.onChange,
+      reference = props.reference,
+      right = props.right,
+      size = props.size,
+      style = props.style,
+      value = props.value,
+      icon = props.icon;
+
+  var _useState = useState(checked),
+      check = _useState[0],
+      setCheck = _useState[1];
+
+  var toggle = function toggle(e) {
     e.preventDefault();
     setCheck(!check);
     onChange && onChange(!check);
   };
 
-  useEffect(() => {
+  useEffect(function () {
     setCheck(checked);
   }, [checked]);
   return /*#__PURE__*/React.createElement("label", {
@@ -42,7 +61,7 @@ const Checkbox = props => {
     className: labelClassName,
     style: labelStyle
   }, label) || null, checkbox || /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
-    style: { ...style,
+    style: _extends({}, style, {
       height: size,
       width: size,
       borderWidth: borderWidth,
@@ -52,7 +71,7 @@ const Checkbox = props => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
-    },
+    }),
     className: className
   }, check && icon || null, /*#__PURE__*/React.createElement("input", {
     ref: reference,
