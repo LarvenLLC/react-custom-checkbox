@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-custom-checkbox/static/js/main.42dfe165.chunk.js",
-    "main.js.map": "/react-custom-checkbox/static/js/main.42dfe165.chunk.js.map",
+    "main.js": "/react-custom-checkbox/static/js/main.021bcfb3.chunk.js",
+    "main.js.map": "/react-custom-checkbox/static/js/main.021bcfb3.chunk.js.map",
     "runtime-main.js": "/react-custom-checkbox/static/js/runtime-main.57e6abf8.js",
     "runtime-main.js.map": "/react-custom-checkbox/static/js/runtime-main.57e6abf8.js.map",
-    "static/js/2.5f176e24.chunk.js": "/react-custom-checkbox/static/js/2.5f176e24.chunk.js",
-    "static/js/2.5f176e24.chunk.js.map": "/react-custom-checkbox/static/js/2.5f176e24.chunk.js.map",
+    "static/js/2.a183a971.chunk.js": "/react-custom-checkbox/static/js/2.a183a971.chunk.js",
+    "static/js/2.a183a971.chunk.js.map": "/react-custom-checkbox/static/js/2.a183a971.chunk.js.map",
     "index.html": "/react-custom-checkbox/index.html",
-    "precache-manifest.a30ac5bcdba24ff09ea473f1ad9711b3.js": "/react-custom-checkbox/precache-manifest.a30ac5bcdba24ff09ea473f1ad9711b3.js",
+    "precache-manifest.292ce6f53bc3f87d07b328656693014a.js": "/react-custom-checkbox/precache-manifest.292ce6f53bc3f87d07b328656693014a.js",
     "service-worker.js": "/react-custom-checkbox/service-worker.js",
-    "static/js/2.5f176e24.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.5f176e24.chunk.js.LICENSE.txt"
+    "static/js/2.a183a971.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.a183a971.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.57e6abf8.js",
-    "static/js/2.5f176e24.chunk.js",
-    "static/js/main.42dfe165.chunk.js"
+    "static/js/2.a183a971.chunk.js",
+    "static/js/main.021bcfb3.chunk.js"
   ]
 }
