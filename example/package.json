@@ -5,9 +5,10 @@
   "private": true,
   "dependencies": {
     "react": "file:../node_modules/react",
+    "react-custom-checkbox": "file:..",
     "react-dom": "file:../node_modules/react-dom",
-    "react-scripts": "file:../node_modules/react-scripts",
-    "react-custom-checkbox": "file:.."
+    "react-icons": "^3.10.0",
+    "react-scripts": "file:../node_modules/react-scripts"
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
