@@ -16,6 +16,8 @@ Or
 yarn add react-custom-checkbox
 ```
 
+![Demo Video](/example/public/react-custom-checkbox.gif)
+
 ## Usage
 
 ```jsx
