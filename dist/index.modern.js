@@ -54,7 +54,10 @@ var Checkbox = function Checkbox(props) {
     setCheck(checked);
   }, [checked]);
   return /*#__PURE__*/React.createElement("label", {
-    style: containerStyle,
+    style: _extends({}, containerStyle, {
+      display: "flex",
+      alignItems: "center"
+    }),
     className: containerClassName,
     onClick: toggle
   }, right && label && /*#__PURE__*/React.createElement("span", {
@@ -68,9 +71,9 @@ var Checkbox = function Checkbox(props) {
       borderColor: borderColor,
       borderStyle: borderStyle,
       borderRadius: borderRadius,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
     }),
     className: className
   }, check && icon || null, /*#__PURE__*/React.createElement("input", {
@@ -88,25 +91,27 @@ var Checkbox = function Checkbox(props) {
 };
 
 Checkbox.defaultProps = {
-  borderColor: '#D7C629',
-  borderStyle: 'solid',
+  borderColor: "#D7C629",
+  borderStyle: "solid",
   borderWidth: 2,
   borderRadius: 5,
   checked: false,
   right: false,
-  name: '',
+  name: "",
   size: 18,
   style: {},
-  className: '',
-  labelStyle: {},
-  labelClassName: '',
+  className: "",
+  labelStyle: {
+    marginLeft: 5
+  },
+  labelClassName: "",
   containerStyle: {},
-  containerClassName: '',
-  value: '',
+  containerClassName: "",
+  value: "",
   onChange: null,
   icon: /*#__PURE__*/React.createElement("div", {
     style: {
-      backgroundColor: '#D7C629',
+      backgroundColor: "#D7C629",
       borderRadius: 5,
       padding: 5
     }
