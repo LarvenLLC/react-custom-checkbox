@@ -84,6 +84,30 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
+## Props
+
+| Prop               |                  Explanation                  |  Data Type   |                            (Sample) Values                             |                                    Default                                    |
+| ------------------ | :-------------------------------------------: | :----------: | :--------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
+| icon               |               custom check icon               | Object (jsx) | \* `<img src={require("./check.png")} style={{ width: 24 }} alt="" />` | `<div style={{ backgroundColor: "#D7C629", borderRadius: 5, padding: 5 }} />` |
+| checked            |               state of checkbox               |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
+| label              |              checkbox label text              |    String    |                     _ `"Cheese"`<br/>_ `"Lettuce"`                     |                                      ``                                       |
+| onChange           | function triggered when checked state changes |     Func     |           Usage <br/> \* `(checked) => console.log(checked)`           |                                    `null`                                     |
+| size               |               size of checkbox                |    Number    |                         _ `30`<br/>_ `15`<br/>                         |                                     `18`                                      |
+| right              |             label position right?             |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
+| name               |              checkbox input name              |    String    |                    _ `"toppings"`<br/>_ `"hobbies"`                    |                                     `""`                                      |
+| value              |             checkbox input value              |    Number    |                     _ `"cheese"`<br/>_ `"lettuce"`                     |                                     `""`                                      |
+| reference          |              checkbox input ref               |     Func     |                _ `checkboxRef`<br/>_ `this.checkboxRef`                |                                      ``                                       |
+| style              |              checkbox css style               |    Object    |                         \* `{margin: 10}`<br/>                         |                                     `{}`                                      |
+| className          |            checkbox css class(es)             |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| borderColor        |           color of checkbox border            |    String    |                        _ `"red"`<br/>_ `"#fff"`                        |                                  `"#D7C629"`                                  |
+| borderRadius       |           radius of checkbox border           |    Number    |                            _ `10`<br/>_ `0`                            |                                      `5`                                      |
+| borderStyle        |           style of checkbox border            |    Object    |             _ `"solid"`<br/>_ `"dashed"`<br/>\* `"dotted"`             |                                   `"solid"`                                   |
+| borderWidth        |         thickness of checkbox border          |    Number    |                            _ `4`<br/>_ `0`                             |                                      `2`                                      |
+| labelClassName     |           label text css class(es)            |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| labelStyle         |             label text css style              |    Object    |                           \* `{margin: 10}`                            |                              `{ marginLeft: 5 }`                              |
+| containerClassName |   checkbox & label container css class(es)    |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| containerStyle     |          checkbox & label css style           |    Object    |                           \* `{margin: 10}`                            |                                     `{}`                                      |
+
 ## License
 
 MIT © [BossBele](https://github.com/BossBele)
