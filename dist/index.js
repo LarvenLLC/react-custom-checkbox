@@ -29,6 +29,7 @@ var Checkbox = function Checkbox(props) {
       checkbox = props.checkbox,
       className = props.className,
       checked = props.checked,
+      disabled = props.disabled,
       containerClassName = props.containerClassName,
       containerStyle = props.containerStyle,
       label = props.label,
@@ -62,7 +63,9 @@ var Checkbox = function Checkbox(props) {
       alignItems: "center"
     }),
     className: containerClassName,
-    onClick: toggle
+    onClick: function onClick(e) {
+      return !disabled ? toggle(e) : null;
+    }
   }, right && label && /*#__PURE__*/React__default.createElement("span", {
     className: labelClassName,
     style: labelStyle
@@ -76,7 +79,8 @@ var Checkbox = function Checkbox(props) {
       borderRadius: borderRadius,
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
+      cursor: disabled ? "not-allowed" : ""
     }),
     className: className
   }, check && icon || null, /*#__PURE__*/React__default.createElement("input", {
@@ -86,6 +90,7 @@ var Checkbox = function Checkbox(props) {
     checked: check,
     value: value,
     onChange: toggle,
+    disabled: disabled,
     hidden: true
   }))), !right && label && /*#__PURE__*/React__default.createElement("span", {
     className: labelClassName,
@@ -99,6 +104,7 @@ Checkbox.defaultProps = {
   borderWidth: 2,
   borderRadius: 5,
   checked: false,
+  disabled: false,
   right: false,
   name: "",
   size: 18,
