@@ -9,6 +9,7 @@ const Checkbox = (props) => {
     checkbox,
     className,
     checked,
+    disabled,
     containerClassName,
     containerStyle,
     label,
@@ -37,9 +38,13 @@ const Checkbox = (props) => {
 
   return (
     <label
-      style={{ ...containerStyle, display: "flex", alignItems: "center" }}
+      style={{
+        ...containerStyle,
+        display: "flex",
+        alignItems: "center",
+      }}
       className={containerClassName}
-      onClick={toggle}
+      onClick={(e) => (!disabled ? toggle(e) : null)}
     >
       {(right && label && (
         <span className={labelClassName} style={labelStyle}>
@@ -61,6 +66,7 @@ const Checkbox = (props) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              cursor: disabled ? "not-allowed" : "",
             }}
             className={className}
           >
@@ -72,6 +78,7 @@ const Checkbox = (props) => {
               checked={check}
               value={value}
               onChange={toggle}
+              disabled={disabled}
               hidden
             />
           </div>
@@ -92,6 +99,7 @@ Checkbox.defaultProps = {
   borderWidth: 2,
   borderRadius: 5,
   checked: false,
+  disabled: false,
   right: false,
   name: "",
   size: 18,
