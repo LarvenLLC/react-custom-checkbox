@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.js": "/react-custom-checkbox/static/js/main.5c872207.chunk.js",
-    "main.js.map": "/react-custom-checkbox/static/js/main.5c872207.chunk.js.map",
-    "runtime-main.js": "/react-custom-checkbox/static/js/runtime-main.b08d4491.js",
-    "runtime-main.js.map": "/react-custom-checkbox/static/js/runtime-main.b08d4491.js.map",
-    "static/js/2.8e74e82e.chunk.js": "/react-custom-checkbox/static/js/2.8e74e82e.chunk.js",
-    "static/js/2.8e74e82e.chunk.js.map": "/react-custom-checkbox/static/js/2.8e74e82e.chunk.js.map",
+    "main.js": "/react-custom-checkbox/static/js/main.2d45b624.chunk.js",
+    "main.js.map": "/react-custom-checkbox/static/js/main.2d45b624.chunk.js.map",
+    "runtime-main.js": "/react-custom-checkbox/static/js/runtime-main.24d69070.js",
+    "runtime-main.js.map": "/react-custom-checkbox/static/js/runtime-main.24d69070.js.map",
+    "static/js/2.8ef00735.chunk.js": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js",
+    "static/js/2.8ef00735.chunk.js.map": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js.map",
     "index.html": "/react-custom-checkbox/index.html",
-    "static/js/2.8e74e82e.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.8e74e82e.chunk.js.LICENSE.txt",
-    "static/media/check.png": "/react-custom-checkbox/static/media/check.7da1abb4.png"
+    "static/js/2.8ef00735.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b08d4491.js",
-    "static/js/2.8e74e82e.chunk.js",
-    "static/js/main.5c872207.chunk.js"
+    "static/js/runtime-main.24d69070.js",
+    "static/js/2.8ef00735.chunk.js",
+    "static/js/main.2d45b624.chunk.js"
   ]
 }
