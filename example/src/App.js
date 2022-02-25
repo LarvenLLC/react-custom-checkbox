@@ -6,9 +6,10 @@ const App = () => {
   return (
     <>
       <h4>Default:</h4>
-      <Checkbox />
+      <Checkbox tabIndex={1} />
       <h4>Using Custom Icon:</h4>
       <Checkbox
+        tabIndex={2}
         icon={<Icon.FiCheck color="#174A41" size={14} />}
         name="my-input"
         checked={true}
@@ -25,8 +26,9 @@ const App = () => {
       />
       <h4>Using Image Icon:</h4>
       <Checkbox
+        tabIndex={3}
         checked={true}
-        icon={<img src={require("./check.png")} style={{ width: 24 }} alt="" />}
+        icon={<img src="https://raw.githubusercontent.com/LarvenLLC/react-custom-checkbox/master/example/src/check.png" style={{ width: 24 }} alt="" />}
         borderColor="#D7C629"
         borderRadius={10}
         size={18}
@@ -34,6 +36,7 @@ const App = () => {
       />
       <h4>More Styling:</h4>
       <Checkbox
+        tabIndex={4}
         checked={true}
         icon={
           <div
