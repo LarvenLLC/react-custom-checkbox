@@ -18,6 +18,23 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var _excluded = ["borderColor", "borderRadius", "borderStyle", "borderWidth", "checkbox", "className", "checked", "disabled", "containerClassName", "containerStyle", "label", "labelClassName", "labelStyle", "name", "onChange", "reference", "right", "size", "style", "value", "icon", "tabIndex"];
+
 var Checkbox = function Checkbox(props) {
   var borderColor = props.borderColor,
       borderRadius = props.borderRadius,
@@ -39,7 +56,9 @@ var Checkbox = function Checkbox(props) {
       size = props.size,
       style = props.style,
       value = props.value,
-      icon = props.icon;
+      icon = props.icon,
+      tabIndex = props.tabIndex,
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var _useState = useState(checked),
       check = _useState[0],
@@ -47,6 +66,11 @@ var Checkbox = function Checkbox(props) {
 
   var toggle = function toggle(e) {
     e.preventDefault();
+
+    if (disabled) {
+      return null;
+    }
+
     setCheck(!check);
     onChange && onChange(!check);
   };
@@ -61,7 +85,7 @@ var Checkbox = function Checkbox(props) {
     }),
     className: containerClassName,
     onClick: function onClick(e) {
-      return !disabled ? toggle(e) : null;
+      return toggle(e);
     }
   }, right && label && /*#__PURE__*/React.createElement("span", {
     className: labelClassName,
@@ -79,8 +103,14 @@ var Checkbox = function Checkbox(props) {
       justifyContent: "center",
       cursor: disabled ? "not-allowed" : ""
     }),
+    tabIndex: tabIndex,
+    onKeyDown: function onKeyDown(e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        toggle(e);
+      }
+    },
     className: className
-  }, check && icon || null, /*#__PURE__*/React.createElement("input", {
+  }, check && icon || null, /*#__PURE__*/React.createElement("input", _extends({}, rest, {
     ref: reference,
     type: "checkbox",
     name: name,
@@ -89,7 +119,7 @@ var Checkbox = function Checkbox(props) {
     onChange: toggle,
     disabled: disabled,
     hidden: true
-  }))), !right && label && /*#__PURE__*/React.createElement("span", {
+  })))), !right && label && /*#__PURE__*/React.createElement("span", {
     className: labelClassName,
     style: labelStyle
   }, label) || null);
