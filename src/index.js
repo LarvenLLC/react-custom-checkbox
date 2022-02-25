@@ -23,11 +23,16 @@ const Checkbox = (props) => {
     style,
     value,
     icon,
+    tabIndex,
+    ...rest
   } = props;
   const [check, setCheck] = useState(checked);
 
   const toggle = (e) => {
     e.preventDefault();
+    if (disabled) {
+      return null;
+    }
     setCheck(!check);
     onChange && onChange(!check);
   };
@@ -44,7 +49,7 @@ const Checkbox = (props) => {
         alignItems: "center",
       }}
       className={containerClassName}
-      onClick={(e) => (!disabled ? toggle(e) : null)}
+      onClick={(e) => toggle(e)}
     >
       {(right && label && (
         <span className={labelClassName} style={labelStyle}>
@@ -68,10 +73,19 @@ const Checkbox = (props) => {
               justifyContent: "center",
               cursor: disabled ? "not-allowed" : "",
             }}
+            tabIndex={tabIndex}
+            // onKeyPress={(e) => (!disabled ? toggle(e) : null)}
+            // toggle checkbox on press enter or space
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                toggle(e);
+              }
+            }}
             className={className}
           >
             {(check && icon) || null}
             <input
+              {...rest}
               ref={reference}
               type="checkbox"
               name={name}
