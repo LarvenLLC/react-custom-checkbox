@@ -44,9 +44,9 @@ const Checkbox = (props) => {
   return (
     <label
       style={{
-        ...containerStyle,
         display: "flex",
         alignItems: "center",
+        ...containerStyle,
       }}
       className={containerClassName}
       onClick={(e) => toggle(e)}
