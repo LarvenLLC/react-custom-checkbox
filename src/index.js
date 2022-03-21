@@ -61,13 +61,13 @@ const Checkbox = (props) => {
         <span>
           <div
             style={{
-              ...style,
               height: size,
               width: size,
               borderWidth: borderWidth,
               borderColor: borderColor,
               borderStyle: borderStyle,
               borderRadius: borderRadius,
+              ...style,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
