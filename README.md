@@ -35,10 +35,11 @@ const MyComponent = () => {
         icon={<Icon.FiCheck color="#174A41" size={14} />}
         name="my-input"
         checked={true}
-        onChange={(value) => {
+        onChange={(value, event) => {
           let p = {
             isTrue: value,
           };
+          console.log(event);
           return alert(value);
         }}
         borderColor="#D7C629"
@@ -92,7 +93,7 @@ export default MyComponent;
 | checked            |               state of checkbox               |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
 | disabled           |     checkbox input active/inactive state      |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
 | label              |              checkbox label text              |    String    |                     _ `"Cheese"`<br/>_ `"Lettuce"`                     |                                      ``                                       |
-| onChange           | function triggered when checked state changes |     Func     |           Usage <br/> \* `(checked) => console.log(checked)`           |                                    `null`                                     |
+| onChange           | function triggered when checked state changes |     Func     |    Usage <br/> \* `(checked, event) => console.log(checked, event)`    |                                    `null`                                     |
 | size               |               size of checkbox                |    Number    |                         _ `30`<br/>_ `15`<br/>                         |                                     `18`                                      |
 | right              |             label position right?             |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
 | name               |              checkbox input name              |    String    |                    _ `"toppings"`<br/>_ `"hobbies"`                    |                                     `""`                                      |

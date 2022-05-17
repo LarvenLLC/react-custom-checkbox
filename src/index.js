@@ -34,7 +34,7 @@ const Checkbox = (props) => {
       return null;
     }
     setCheck(!check);
-    onChange && onChange(!check);
+    onChange && onChange(!check, e);
   };
 
   useEffect(() => {
