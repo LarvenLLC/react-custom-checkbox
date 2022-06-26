@@ -75,17 +75,17 @@ var Checkbox = function Checkbox(props) {
     }
 
     setCheck(!check);
-    onChange && onChange(!check);
+    onChange && onChange(!check, e);
   };
 
   React.useEffect(function () {
     setCheck(checked);
   }, [checked]);
   return /*#__PURE__*/React__default.createElement("label", {
-    style: _extends({}, containerStyle, {
+    style: _extends({
       display: "flex",
       alignItems: "center"
-    }),
+    }, containerStyle),
     className: containerClassName,
     onClick: function onClick(e) {
       return toggle(e);
@@ -94,13 +94,14 @@ var Checkbox = function Checkbox(props) {
     className: labelClassName,
     style: labelStyle
   }, label) || null, checkbox || /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement("div", {
-    style: _extends({}, style, {
+    style: _extends({
       height: size,
       width: size,
       borderWidth: borderWidth,
       borderColor: borderColor,
       borderStyle: borderStyle,
-      borderRadius: borderRadius,
+      borderRadius: borderRadius
+    }, style, {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
