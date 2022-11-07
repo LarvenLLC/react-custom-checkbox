@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Switch from './Switch';
 
 function Checkbox(props) {
   const {
@@ -131,4 +130,3 @@ Checkbox.defaultProps = {
   ),
 };
 export default Checkbox;
-export { Switch };
