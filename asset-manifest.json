@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/react-custom-checkbox/static/js/main.de8a8ce3.chunk.js",
-    "main.js.map": "/react-custom-checkbox/static/js/main.de8a8ce3.chunk.js.map",
+    "main.js": "/react-custom-checkbox/static/js/main.d2795921.chunk.js",
+    "main.js.map": "/react-custom-checkbox/static/js/main.d2795921.chunk.js.map",
     "runtime-main.js": "/react-custom-checkbox/static/js/runtime-main.24d69070.js",
     "runtime-main.js.map": "/react-custom-checkbox/static/js/runtime-main.24d69070.js.map",
-    "static/js/2.8ef00735.chunk.js": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js",
-    "static/js/2.8ef00735.chunk.js.map": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js.map",
+    "static/js/2.91ec7f8a.chunk.js": "/react-custom-checkbox/static/js/2.91ec7f8a.chunk.js",
+    "static/js/2.91ec7f8a.chunk.js.map": "/react-custom-checkbox/static/js/2.91ec7f8a.chunk.js.map",
     "index.html": "/react-custom-checkbox/index.html",
-    "static/js/2.8ef00735.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.8ef00735.chunk.js.LICENSE.txt"
+    "static/js/2.91ec7f8a.chunk.js.LICENSE.txt": "/react-custom-checkbox/static/js/2.91ec7f8a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24d69070.js",
-    "static/js/2.8ef00735.chunk.js",
-    "static/js/main.de8a8ce3.chunk.js"
+    "static/js/2.91ec7f8a.chunk.js",
+    "static/js/main.d2795921.chunk.js"
   ]
 }
