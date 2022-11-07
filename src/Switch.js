@@ -18,10 +18,13 @@ import React, { useEffect, useState } from "react";
  * @param {Object} props.indicatorStyle
  * @param {Object} props.labelStyle
  * @param {String} props.labelClassName
+ * @param {String} props.name
  * @param {function()} props.onChange
+ * @param {String} props.reference
  * @param {Object} props.style
  * @param {String} props.trackClassName
  * @param {Object} props.trackStyle
+ * @param {String} props.value
  * @returns {React.ReactElement}
  */
 function Switch(props) {
@@ -42,10 +45,14 @@ function Switch(props) {
     indicatorStyle,
     labelStyle,
     labelClassName,
+    name,
     onChange,
+    reference,
     style,
     trackClassName,
     trackStyle,
+    value,
+    ...rest
   } = props;
 
   const [check, setCheck] = useState(checked);
@@ -64,15 +71,28 @@ function Switch(props) {
   }, [checked]);
 
   return (
-    <div style={containerStyle} containerClassName={containerClassName}>
+    <div style={containerStyle} className={containerClassName}>
       {/* begin toggle markup */}
-      <label class={labelClassName} style={labelStyle} for={id} onClick={toggle}>
-        <input type="checkbox" className={className} style={style} checked={checked} id={id} />
+      <label className={labelClassName} style={labelStyle} htmlFor={id} onClick={toggle}>
+        <input
+          {...rest}
+          ref={reference}
+          name={name}
+          type="checkbox"
+          className={className}
+          style={style}
+          checked={checked}
+          id={id}
+          value={value}
+          onChange={toggle}
+          disabled={disabled}
+          hidden
+        />
         <span className={trackClassName} style={{...trackStyle, ...(checked ? checkedTrackStyle : {})}}>
           <span className={indicatorClassName} style={{...indicatorStyle, ...(checked ? checkedIndicatorStyle : {})}}>
             {/* This check mark is optional  */}
             {icon ? (
-              <span class={iconClassName} style={{...iconStyle, ...(checked ? checkedIconStyle : {})}}>
+              <span className={iconClassName} style={{...iconStyle, ...(checked ? checkedIconStyle : {})}}>
                 {icon}
               </span>
             ) : null}
