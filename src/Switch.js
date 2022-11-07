@@ -24,7 +24,7 @@ import React, { useEffect, useState } from "react";
  * @param {Object} props.trackStyle
  * @returns {React.ReactElement}
  */
-const Switch = (props) => {
+function Switch(props) {
   const {
     iconClassName,
     iconStyle,
