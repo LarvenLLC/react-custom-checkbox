@@ -13,7 +13,6 @@ import React, { useEffect, useState } from "react";
  * @param {Object} props.containerStyle
  * @param {Boolean} props.disabled
  * @param {React.ReactElement} props.icon
- * @param {String} props.id
  * @param {String} props.indicatorClassName
  * @param {Object} props.indicatorStyle
  * @param {Object} props.labelStyle
@@ -40,7 +39,6 @@ function Switch(props) {
     containerStyle,
     disabled,
     icon,
-    id,
     indicatorClassName,
     indicatorStyle,
     labelStyle,
@@ -73,7 +71,7 @@ function Switch(props) {
   return (
     <div style={containerStyle} className={containerClassName}>
       {/* begin toggle markup */}
-      <label className={labelClassName} style={labelStyle} htmlFor={id} onClick={toggle}>
+      <label className={labelClassName} style={labelStyle} onClick={toggle}>
         <input
           {...rest}
           ref={reference}
@@ -81,18 +79,17 @@ function Switch(props) {
           type="checkbox"
           className={className}
           style={style}
-          checked={checked}
-          id={id}
+          checked={check}
           value={value}
           onChange={toggle}
           disabled={disabled}
           hidden
         />
-        <span className={trackClassName} style={{...trackStyle, ...(checked ? checkedTrackStyle : {})}}>
-          <span className={indicatorClassName} style={{...indicatorStyle, ...(checked ? checkedIndicatorStyle : {})}}>
+        <span className={trackClassName} style={{...trackStyle, ...(check ? checkedTrackStyle : {})}}>
+          <span className={indicatorClassName} style={{...indicatorStyle, ...(check ? checkedIndicatorStyle : {})}}>
             {/* This check mark is optional  */}
             {icon ? (
-              <span className={iconClassName} style={{...iconStyle, ...(checked ? checkedIconStyle : {})}}>
+              <span className={iconClassName} style={{...iconStyle, ...(check ? checkedIconStyle : {})}}>
                 {icon}
               </span>
             ) : null}
@@ -111,12 +108,22 @@ Switch.defaultProps = {
     opacity: 0,
     transition: 'all 0.25s ease-in-out',
   },
-  checkedIconStyle: {},
-  checkedIndicatorStyle: {},
-  checkedTrackStyle: {},
+  checkedIconStyle: {
+    opacity: 1,
+    transition: 'all 0.25s ease-in-out',
+  },
+  checkedIndicatorStyle: {
+    background: '#121943',
+    transform: 'translateX(30px)',
+  },
+  checkedTrackStyle: {
+    border: '1px solid transparent',
+    boxShadow: '0px 0px 0px 2px #121943',
+    opacity: 1,
+    transition: 'all 0.25s ease-in-out',
+  },
   className: "larven__toggleInput",
   containerStyle: { display: 'inline-block' },
-  id: "larven__switchID",
   indicatorClassName: "larven__toggle-indicator",
   indicatorStyle: {
     alignItems: 'center',
@@ -160,11 +167,6 @@ Switch.defaultProps = {
     marginRight: 12,
     position: 'relative',
     width: 60,
-  },
-  icon: (
-    <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
-      <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
-    </svg>
-  ),
+  }
 };
 export default Switch;
