@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Switch from './Switch';
 
-const Checkbox = (props) => {
+function Checkbox(props) {
   const {
     borderColor,
     borderRadius,
@@ -131,4 +131,4 @@ Checkbox.defaultProps = {
   ),
 };
 export default Checkbox;
-export {Switch};
+export { Switch };
