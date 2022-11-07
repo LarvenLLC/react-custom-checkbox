@@ -36,7 +36,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var _excluded = ["iconClassName", "iconStyle", "checked", "checkedIconStyle", "checkedIndicatorStyle", "checkedTrackStyle", "className", "containerClassName", "containerStyle", "disabled", "icon", "id", "indicatorClassName", "indicatorStyle", "labelStyle", "labelClassName", "name", "onChange", "reference", "style", "trackClassName", "trackStyle", "value"];
+var _excluded = ["iconClassName", "iconStyle", "checked", "checkedIconStyle", "checkedIndicatorStyle", "checkedTrackStyle", "className", "containerClassName", "containerStyle", "disabled", "icon", "indicatorClassName", "indicatorStyle", "labelStyle", "labelClassName", "name", "onChange", "reference", "style", "trackClassName", "trackStyle", "value"];
 
 function Switch(props) {
   var iconClassName = props.iconClassName,
@@ -50,7 +50,6 @@ function Switch(props) {
       containerStyle = props.containerStyle,
       disabled = props.disabled,
       icon = props.icon,
-      id = props.id,
       indicatorClassName = props.indicatorClassName,
       indicatorStyle = props.indicatorStyle,
       labelStyle = props.labelStyle,
@@ -88,7 +87,6 @@ function Switch(props) {
   }, /*#__PURE__*/React__default.createElement("label", {
     className: labelClassName,
     style: labelStyle,
-    htmlFor: id,
     onClick: toggle
   }, /*#__PURE__*/React__default.createElement("input", _extends({}, rest, {
     ref: reference,
@@ -96,21 +94,20 @@ function Switch(props) {
     type: "checkbox",
     className: className,
     style: style,
-    checked: checked,
-    id: id,
+    checked: check,
     value: value,
     onChange: toggle,
     disabled: disabled,
     hidden: true
   })), /*#__PURE__*/React__default.createElement("span", {
     className: trackClassName,
-    style: _extends({}, trackStyle, checked ? checkedTrackStyle : {})
+    style: _extends({}, trackStyle, check ? checkedTrackStyle : {})
   }, /*#__PURE__*/React__default.createElement("span", {
     className: indicatorClassName,
-    style: _extends({}, indicatorStyle, checked ? checkedIndicatorStyle : {})
+    style: _extends({}, indicatorStyle, check ? checkedIndicatorStyle : {})
   }, icon ? /*#__PURE__*/React__default.createElement("span", {
     className: iconClassName,
-    style: _extends({}, iconStyle, checked ? checkedIconStyle : {})
+    style: _extends({}, iconStyle, check ? checkedIconStyle : {})
   }, icon) : null))));
 }
 
@@ -123,14 +120,24 @@ Switch.defaultProps = {
     opacity: 0,
     transition: 'all 0.25s ease-in-out'
   },
-  checkedIconStyle: {},
-  checkedIndicatorStyle: {},
-  checkedTrackStyle: {},
+  checkedIconStyle: {
+    opacity: 1,
+    transition: 'all 0.25s ease-in-out'
+  },
+  checkedIndicatorStyle: {
+    background: '#121943',
+    transform: 'translateX(30px)'
+  },
+  checkedTrackStyle: {
+    border: '1px solid transparent',
+    boxShadow: '0px 0px 0px 2px #121943',
+    opacity: 1,
+    transition: 'all 0.25s ease-in-out'
+  },
   className: "larven__toggleInput",
   containerStyle: {
     display: 'inline-block'
   },
-  id: "larven__switchID",
   indicatorClassName: "larven__toggle-indicator",
   indicatorStyle: {
     alignItems: 'center',
@@ -174,15 +181,7 @@ Switch.defaultProps = {
     marginRight: 12,
     position: 'relative',
     width: 60
-  },
-  icon: /*#__PURE__*/React__default.createElement("svg", {
-    viewBox: "0 0 24 24",
-    id: "ghq-svg-check",
-    role: "presentation",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React__default.createElement("path", {
-    d: "M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"
-  }))
+  }
 };
 
 module.exports = Switch;
