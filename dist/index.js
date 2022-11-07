@@ -36,7 +36,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var Switch = function Switch(props) {
+function Switch(props) {
   var iconClassName = props.iconClassName,
       iconStyle = props.iconStyle,
       checked = props.checked,
@@ -100,7 +100,7 @@ var Switch = function Switch(props) {
     "class": iconClassName,
     style: _extends({}, iconStyle, checked ? checkedIconStyle : {})
   }, icon) : null))));
-};
+}
 
 Switch.defaultProps = {
   iconClassName: "larven__activeIcon",
@@ -175,7 +175,7 @@ Switch.defaultProps = {
 
 var _excluded = ["borderColor", "borderRadius", "borderStyle", "borderWidth", "checkbox", "className", "checked", "disabled", "containerClassName", "containerStyle", "label", "labelClassName", "labelStyle", "name", "onChange", "reference", "right", "size", "style", "value", "icon", "tabIndex"];
 
-var Checkbox = function Checkbox(props) {
+function Checkbox(props) {
   var borderColor = props.borderColor,
       borderRadius = props.borderRadius,
       borderStyle = props.borderStyle,
@@ -264,8 +264,7 @@ var Checkbox = function Checkbox(props) {
     className: labelClassName,
     style: labelStyle
   }, label) || null);
-};
-
+}
 Checkbox.defaultProps = {
   borderColor: "#D7C629",
   borderStyle: "solid",
