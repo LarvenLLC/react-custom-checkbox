@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Icon from "react-icons/fi";
-import Checkbox from "react-custom-checkbox";
+import Checkbox, { Switch } from "react-custom-checkbox";
+
+const switchCheckedStyles = {
+  border: '1px solid transparent',
+  boxShadow: '0px 0px 0px 2px #121943',
+  opacity: 1,
+  transition: 'all 0.25s ease-in-out',
+}
+
+const checkedIndicatorStyle = {
+  background: '#121943',
+  transform: 'translateX(30px)',
+}
+
+const checkedIconStyle = {
+  opacity: 1,
+  transition: 'all 0.25s ease-in-out',
+}
 
 const App = () => {
+  const [switchOneCheck, setSwitchOneCheck] = useState(false);
+
   return (
     <>
       <h4>Default:</h4>
@@ -56,6 +75,14 @@ const App = () => {
         style={{ overflow: "hidden" }}
         size={20}
         label="Coooool right?"
+      />
+      <h2>Switch:</h2>
+      <Switch
+        checked={switchOneCheck}
+        onChange={setSwitchOneCheck}
+        checkedIconStyle={checkedIconStyle}
+        checkedIndicatorStyle={checkedIndicatorStyle}
+        checkedTrackStyle={switchCheckedStyles}
       />
     </>
   );
