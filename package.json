@@ -1,6 +1,6 @@
 {
   "name": "react-custom-checkbox",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "A simple and fully customizable React checkbox input component.",
   "author": "Adam 'BossBele' Beleko",
   "license": "MIT",
@@ -26,7 +26,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "npm run build:dist && npm run build:switch",
+    "build:dist": "microbundle-crl --no-compress --format modern,cjs",
+    "build:switch": "microbundle-crl src/switch.js -o switch/index.js --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepublish": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -62,6 +64,11 @@
     "react-scripts": "^4.0.3"
   },
   "files": [
-    "dist"
-  ]
+    "dist",
+    "switch"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./switch": "./switch/index.js"
+  }
 }
