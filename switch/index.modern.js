@@ -1,34 +1,70 @@
 import React, { useState, useEffect } from 'react';
 
-function Switch(props) {
-  const {
-    iconClassName,
-    iconStyle,
-    checked,
-    checkedIconStyle,
-    checkedIndicatorStyle,
-    checkedTrackStyle,
-    className,
-    containerClassName,
-    containerStyle,
-    disabled,
-    icon,
-    indicatorClassName,
-    indicatorStyle,
-    labelStyle,
-    labelClassName,
-    name,
-    onChange,
-    reference,
-    style,
-    trackClassName,
-    trackStyle,
-    value,
-    ...rest
-  } = props;
-  const [check, setCheck] = useState(checked);
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-  const toggle = e => {
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var _excluded = ["iconClassName", "iconStyle", "checked", "checkedIconStyle", "checkedIndicatorStyle", "checkedTrackStyle", "className", "containerClassName", "containerStyle", "disabled", "icon", "indicatorClassName", "indicatorStyle", "labelStyle", "labelClassName", "name", "onChange", "reference", "style", "trackClassName", "trackStyle", "value"];
+
+function Switch(props) {
+  var iconClassName = props.iconClassName,
+      iconStyle = props.iconStyle,
+      checked = props.checked,
+      checkedIconStyle = props.checkedIconStyle,
+      checkedIndicatorStyle = props.checkedIndicatorStyle,
+      checkedTrackStyle = props.checkedTrackStyle,
+      className = props.className,
+      containerClassName = props.containerClassName,
+      containerStyle = props.containerStyle,
+      disabled = props.disabled,
+      icon = props.icon,
+      indicatorClassName = props.indicatorClassName,
+      indicatorStyle = props.indicatorStyle,
+      labelStyle = props.labelStyle,
+      labelClassName = props.labelClassName,
+      name = props.name,
+      onChange = props.onChange,
+      reference = props.reference,
+      style = props.style,
+      trackClassName = props.trackClassName,
+      trackStyle = props.trackStyle,
+      value = props.value,
+      rest = _objectWithoutPropertiesLoose(props, _excluded);
+
+  var _useState = useState(checked),
+      check = _useState[0],
+      setCheck = _useState[1];
+
+  var toggle = function toggle(e) {
     e.preventDefault();
 
     if (disabled) {
@@ -39,7 +75,7 @@ function Switch(props) {
     onChange && onChange(!check, e);
   };
 
-  useEffect(() => {
+  useEffect(function () {
     setCheck(checked);
   }, [checked]);
   return /*#__PURE__*/React.createElement("div", {
@@ -49,7 +85,7 @@ function Switch(props) {
     className: labelClassName,
     style: labelStyle,
     onClick: toggle
-  }, /*#__PURE__*/React.createElement("input", Object.assign({}, rest, {
+  }, /*#__PURE__*/React.createElement("input", _extends({}, rest, {
     ref: reference,
     name: name,
     type: "checkbox",
@@ -62,19 +98,13 @@ function Switch(props) {
     hidden: true
   })), /*#__PURE__*/React.createElement("span", {
     className: trackClassName,
-    style: { ...trackStyle,
-      ...(check ? checkedTrackStyle : {})
-    }
+    style: _extends({}, trackStyle, check ? checkedTrackStyle : {})
   }, /*#__PURE__*/React.createElement("span", {
     className: indicatorClassName,
-    style: { ...indicatorStyle,
-      ...(check ? checkedIndicatorStyle : {})
-    }
+    style: _extends({}, indicatorStyle, check ? checkedIndicatorStyle : {})
   }, icon ? /*#__PURE__*/React.createElement("span", {
     className: iconClassName,
-    style: { ...iconStyle,
-      ...(check ? checkedIconStyle : {})
-    }
+    style: _extends({}, iconStyle, check ? checkedIconStyle : {})
   }, icon) : null))));
 }
 
