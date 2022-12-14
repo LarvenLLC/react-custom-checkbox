@@ -115,6 +115,9 @@ export default MyComponent;
 
 
 # Switch Component
+
+![Demo Video](/example/public/react-custom-checkbox-switch.gif)
+
 ## Usage
 
 ```jsx
