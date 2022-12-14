@@ -36,31 +36,36 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var _excluded = ["iconClassName", "iconStyle", "checked", "checkedIconStyle", "checkedIndicatorStyle", "checkedTrackStyle", "className", "containerClassName", "containerStyle", "disabled", "icon", "indicatorClassName", "indicatorStyle", "labelStyle", "labelClassName", "name", "onChange", "reference", "style", "trackClassName", "trackStyle", "value"];
+var _excluded = ["checked", "disabled", "icon", "name", "onChange", "reference", "value", "tabIndex", "label", "isLabelRight", "className", "style", "iconClassName", "iconStyle", "checkedIconStyle", "indicatorClassName", "indicatorStyle", "checkedIndicatorStyle", "trackClassName", "trackStyle", "checkedTrackStyle", "labelStyle", "labelClassName", "containerClassName", "containerStyle", "wrapperClassName", "wrapperStyle"];
 
 function Switch(props) {
-  var iconClassName = props.iconClassName,
-      iconStyle = props.iconStyle,
-      checked = props.checked,
-      checkedIconStyle = props.checkedIconStyle,
-      checkedIndicatorStyle = props.checkedIndicatorStyle,
-      checkedTrackStyle = props.checkedTrackStyle,
-      className = props.className,
-      containerClassName = props.containerClassName,
-      containerStyle = props.containerStyle,
+  var checked = props.checked,
       disabled = props.disabled,
       icon = props.icon,
-      indicatorClassName = props.indicatorClassName,
-      indicatorStyle = props.indicatorStyle,
-      labelStyle = props.labelStyle,
-      labelClassName = props.labelClassName,
       name = props.name,
       onChange = props.onChange,
       reference = props.reference,
+      value = props.value,
+      tabIndex = props.tabIndex,
+      label = props.label,
+      isLabelRight = props.isLabelRight,
+      className = props.className,
       style = props.style,
+      iconClassName = props.iconClassName,
+      iconStyle = props.iconStyle,
+      checkedIconStyle = props.checkedIconStyle,
+      indicatorClassName = props.indicatorClassName,
+      indicatorStyle = props.indicatorStyle,
+      checkedIndicatorStyle = props.checkedIndicatorStyle,
       trackClassName = props.trackClassName,
       trackStyle = props.trackStyle,
-      value = props.value,
+      checkedTrackStyle = props.checkedTrackStyle,
+      labelStyle = props.labelStyle,
+      labelClassName = props.labelClassName,
+      containerClassName = props.containerClassName,
+      containerStyle = props.containerStyle,
+      wrapperClassName = props.wrapperClassName,
+      wrapperStyle = props.wrapperStyle,
       rest = _objectWithoutPropertiesLoose(props, _excluded);
 
   var _useState = React.useState(checked),
@@ -82,11 +87,11 @@ function Switch(props) {
     setCheck(checked);
   }, [checked]);
   return /*#__PURE__*/React__default.createElement("div", {
-    style: containerStyle,
-    className: containerClassName
+    style: wrapperStyle,
+    className: wrapperClassName
   }, /*#__PURE__*/React__default.createElement("label", {
-    className: labelClassName,
-    style: labelStyle,
+    className: containerClassName,
+    style: containerStyle,
     onClick: toggle
   }, /*#__PURE__*/React__default.createElement("input", _extends({}, rest, {
     ref: reference,
@@ -99,20 +104,28 @@ function Switch(props) {
     onChange: toggle,
     disabled: disabled,
     hidden: true
-  })), /*#__PURE__*/React__default.createElement("span", {
+  })), isLabelRight && label ? /*#__PURE__*/React__default.createElement("span", {
+    className: labelClassName,
+    style: labelStyle
+  }, label) : null, /*#__PURE__*/React__default.createElement("span", {
     className: trackClassName,
-    style: _extends({}, trackStyle, check ? checkedTrackStyle : {})
+    style: _extends({}, trackStyle, check ? checkedTrackStyle : {}, {
+      cursor: disabled ? "not-allowed" : ""
+    }),
+    tabIndex: tabIndex
   }, /*#__PURE__*/React__default.createElement("span", {
     className: indicatorClassName,
     style: _extends({}, indicatorStyle, check ? checkedIndicatorStyle : {})
   }, icon ? /*#__PURE__*/React__default.createElement("span", {
     className: iconClassName,
     style: _extends({}, iconStyle, check ? checkedIconStyle : {})
-  }, icon) : null))));
+  }, icon) : null)), !isLabelRight && label ? /*#__PURE__*/React__default.createElement("span", {
+    className: labelClassName,
+    style: labelStyle
+  }, label) : null));
 }
 
 Switch.defaultProps = {
-  iconClassName: "larven__activeIcon",
   iconStyle: {
     fill: '#fff',
     height: 20,
@@ -134,11 +147,9 @@ Switch.defaultProps = {
     opacity: 1,
     transition: 'all 0.25s ease-in-out'
   },
-  className: "larven__toggleInput",
-  containerStyle: {
+  wrapperStyle: {
     display: 'inline-block'
   },
-  indicatorClassName: "larven__toggle-indicator",
   indicatorStyle: {
     alignItems: 'center',
     background: '#121943',
@@ -153,14 +164,13 @@ Switch.defaultProps = {
     transition: '0.25s',
     width: 24
   },
-  labelStyle: {
+  containerStyle: {
     alignItems: 'center',
     borderRadius: 100,
     display: 'flex',
     fontWeight: 700,
     marginBottom: 16
   },
-  labelClassName: "larven__toggle",
   style: {
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -170,7 +180,6 @@ Switch.defaultProps = {
     whiteSpace: 'nowrap',
     width: 1
   },
-  trackClassName: "larven__toggle-track",
   trackStyle: {
     background: '#e5efe9',
     border: '1px solid #5a72b5',
