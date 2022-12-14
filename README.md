@@ -110,7 +110,7 @@ export default MyComponent;
 | labelClassName     |           label text css class(es)            |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
 | labelStyle         |             label text css style              |    Object    |                           \* `{margin: 10}`                            |                              `{ marginLeft: 5 }`                              |
 | containerClassName |   checkbox & label container css class(es)    |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
-| containerStyle     |          checkbox & label css style           |    Object    |                           \* `{margin: 10}`                            |                                     `{}`                                      |
+| containerStyle     |     checkbox & label container css style      |    Object    |                           \* `{margin: 10}`                            |                                     `{}`                                      |
 
 
 
@@ -194,6 +194,39 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
+
+## Props
+
+| Prop               |                  Explanation                  |  Data Type   |                            (Sample) Values                             |                                    Default                                    |
+| ------------------ | :-------------------------------------------: | :----------: | :--------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
+| icon               |        switch button icon/element             | Object (jsx) | \* `<img src={require("./check.png")} style={{ width: 24 }} alt="" />` |                                      ``                                       |
+| checked            |               state of switch                 |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
+| disabled           |     switch input active/inactive state        |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
+| onChange           | function triggered when checked state changes |     Func     |    Usage <br/> \* `(checked, event) => console.log(checked, event)`    |                                    `null`                                     |
+| name               |              switch input name                |    String    |                    _ `"toppings"`<br/>_ `"hobbies"`                    |                                     `""`                                      |
+| value              |             checkbox input value              |    Number    |                     _ `"cheese"`<br/>_ `"lettuce"`                     |                                     `""`                                      |
+| reference          |              checkbox input ref               |     Func     |                _ `checkboxRef`<br/>_ `this.checkboxRef`                |                                      ``                                       |
+| label              |              checkbox label text              |    String    |                     _ `"Cheese"`<br/>_ `"Lettuce"`                     |                                      ``                                       |
+| size               |               size of checkbox                |    Number    |                         _ `30`<br/>_ `15`<br/>                         |                                     `18`                                      |
+| isLabelRight       |             label position right?             |     Bool     |                         _ `true`<br/>_ `false`                         |                                    `false`                                    |
+| style              |              switch css style                 |    Object    |                         \* `{margin: 10}`<br/>                         | `{clip: 'rect(0 0 0 0)',clipPath: 'inset(50%)',height: 1,overflow: 'hidden',position: 'absolute',whiteSpace: 'nowrap',width: 1}` |
+| className          |            switch css class(es)               |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| iconClassName      |   switch button icon/element css class(es)    |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| iconStyle          |    switch button icon/element css styles      |    Object    |                           \* `{margin: 10}`                            | `{fill: '#fff',height: 20,width: 20,opacity: 0,transition: 'all 0.25s ease-in-out'}` |
+| checkedIconStyle   | switch button icon/element css styles when checked |    Object    |                           \* `{margin: 10}`                       |              `{opacity: 1,transition: 'all 0.25s ease-in-out'}`               |
+| indicatorClassName |   switch button css class(es)                 |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| indicatorStyle     |    switch button css styles                   |    Object    |                           \* `{margin: 10}`                            |`{alignItems: 'center',background: '#121943',borderRadius: 24,bottom: 2,display: 'flex',height: 24,justifyContent: 'center',left: 2,outline: 'solid 2px transparent',position: 'absolute',transition: '0.25s',width: 24}`|
+| checkedIndicatorStyle|    switch button css styles when checked    |    Object    |                           \* `{margin: 10}`                            |            `{background: '#121943',transform: 'translateX(30px)'}`            |
+| trackClassName     |          switch track css class(es)           |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| trackStyle         |          switch track css styles              |    Object    |                           \* `{margin: 10}`                            | `{background: '#e5efe9',border: '1px solid #5a72b5',borderRadius: 100,cursor: 'pointer',display: 'flex',height: 30,marginRight: 12,position: 'relative',width: 60}` |
+| checkedTrackStyle  |          switch track css styles when checked |    Object    |                           \* `{margin: 10}`                            | `{border: '1px solid transparent',boxShadow: '0px 0px 0px 2px #121943',opacity: 1,transition: 'all 0.25s ease-in-out'}` |
+| labelClassName     |           label text css class(es)            |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| labelStyle         |             label text css styles             |    Object    |                           \* `{margin: 10}`                            |                                      ``                                       |
+| containerClassName |    switch & label container css class(es)     |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| containerStyle     |     switch & label container css styles       |    Object    |                           \* `{margin: 10}`                            | `{alignItems: 'center',borderRadius: 100,display: 'flex',fontWeight: 700,marginBottom: 16,}` |
+| wrapperClassName   |    whole component wrapper css class(es)      |    String    |                   _ `"p-5 mb-3"`<br/>_ `"uk-margin"`                   |                                     `""`                                      |
+| wrapperStyle       |     whole component wrapper css styles        |    Object    |                           \* `{margin: 10}`                            |                      `{ display: 'inline-block' }`                            |
+
 
 ## License
 
