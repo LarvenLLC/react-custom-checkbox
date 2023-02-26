@@ -232,4 +232,5 @@ export default MyComponent;
 
 ## License
 
-MIT © [BossBele](https://github.com/BossBele)
+MIT © [BossBele](https://github.com/BossBele) 
+    @ [chibokocl](https://github.com/chibokocl)
