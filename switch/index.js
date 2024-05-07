@@ -36,15 +36,13 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var _excluded = ["checked", "disabled", "icon", "name", "onChange", "reference", "value", "tabIndex", "label", "isLabelRight", "className", "style", "iconClassName", "iconStyle", "checkedIconStyle", "indicatorClassName", "indicatorStyle", "checkedIndicatorStyle", "trackClassName", "trackStyle", "checkedTrackStyle", "labelStyle", "labelClassName", "containerClassName", "containerStyle", "wrapperClassName", "wrapperStyle"];
-
-function Switch(props) {
+var _excluded = ["checked", "disabled", "icon", "name", "onChange", "value", "tabIndex", "label", "isLabelRight", "className", "style", "iconClassName", "iconStyle", "checkedIconStyle", "indicatorClassName", "indicatorStyle", "checkedIndicatorStyle", "trackClassName", "trackStyle", "checkedTrackStyle", "labelStyle", "labelClassName", "containerClassName", "containerStyle", "wrapperClassName", "wrapperStyle"];
+var Switch = React.forwardRef(function (props, ref) {
   var checked = props.checked,
       disabled = props.disabled,
       icon = props.icon,
       name = props.name,
       onChange = props.onChange,
-      reference = props.reference,
       value = props.value,
       tabIndex = props.tabIndex,
       label = props.label,
@@ -94,7 +92,7 @@ function Switch(props) {
     style: containerStyle,
     onClick: toggle
   }, /*#__PURE__*/React__default.createElement("input", _extends({}, rest, {
-    ref: reference,
+    ref: ref,
     name: name,
     type: "checkbox",
     className: className,
@@ -123,8 +121,7 @@ function Switch(props) {
     className: labelClassName,
     style: labelStyle
   }, label) : null));
-}
-
+});
 Switch.defaultProps = {
   iconStyle: {
     fill: '#fff',
