@@ -36,9 +36,8 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-var _excluded = ["borderColor", "borderRadius", "borderStyle", "borderWidth", "checkbox", "className", "checked", "disabled", "containerClassName", "containerStyle", "label", "labelClassName", "labelStyle", "name", "onChange", "reference", "right", "size", "style", "value", "icon", "tabIndex"];
-
-function Checkbox(props) {
+var _excluded = ["borderColor", "borderRadius", "borderStyle", "borderWidth", "checkbox", "className", "checked", "disabled", "containerClassName", "containerStyle", "label", "labelClassName", "labelStyle", "name", "onChange", "right", "size", "style", "value", "icon", "tabIndex"];
+var Checkbox = React.forwardRef(function (props, ref) {
   var borderColor = props.borderColor,
       borderRadius = props.borderRadius,
       borderStyle = props.borderStyle,
@@ -54,7 +53,6 @@ function Checkbox(props) {
       labelStyle = props.labelStyle,
       name = props.name,
       onChange = props.onChange,
-      reference = props.reference,
       right = props.right,
       size = props.size,
       style = props.style,
@@ -115,7 +113,7 @@ function Checkbox(props) {
     },
     className: className
   }, check && icon || null, /*#__PURE__*/React__default.createElement("input", _extends({}, rest, {
-    ref: reference,
+    ref: ref,
     type: "checkbox",
     name: name,
     checked: check,
@@ -127,7 +125,7 @@ function Checkbox(props) {
     className: labelClassName,
     style: labelStyle
   }, label) || null);
-}
+});
 Checkbox.defaultProps = {
   borderColor: "#D7C629",
   borderStyle: "solid",
@@ -156,6 +154,7 @@ Checkbox.defaultProps = {
     }
   })
 };
+Checkbox.displayName = 'Checkbox';
 
 module.exports = Checkbox;
 //# sourceMappingURL=index.js.map
