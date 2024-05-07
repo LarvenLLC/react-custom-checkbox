@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 
-function Checkbox(props) {
+const Checkbox = forwardRef((props, ref) => {
   const {
     borderColor,
     borderRadius,
@@ -17,7 +17,6 @@ function Checkbox(props) {
     labelStyle,
     name,
     onChange,
-    reference,
     right,
     size,
     style,
@@ -86,7 +85,7 @@ function Checkbox(props) {
             {(check && icon) || null}
             <input
               {...rest}
-              ref={reference}
+              ref={ref}
               type="checkbox"
               name={name}
               checked={check}
@@ -106,7 +105,7 @@ function Checkbox(props) {
         null}
     </label>
   );
-};
+});
 Checkbox.defaultProps = {
   borderColor: "#D7C629",
   borderStyle: "solid",
@@ -129,4 +128,5 @@ Checkbox.defaultProps = {
     <div style={{ backgroundColor: "#D7C629", borderRadius: 5, padding: 5 }} />
   ),
 };
+Checkbox.displayName = 'Checkbox';
 export default Checkbox;
