@@ -20,8 +20,6 @@ interface CheckboxProps {
   name: string;
   /** Checkbox input value */
   value: string;
-  /** Checkbox input ref */
-  reference: React.RefObject<HTMLInputElement>;
   /** Checkbox css style */
   style: React.CSSProperties;
   /** Checkbox css class(es) */
