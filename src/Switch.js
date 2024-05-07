@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 
 /**
  * @param {Object} props 
@@ -7,7 +7,6 @@ import React, { useEffect, useState } from "react";
  * @param {React.ReactElement} props.icon
  * @param {String} props.name
  * @param {function()} props.onChange
- * @param {String} props.reference
  * @param {String} props.value
  * @param {String} props.className
  * @param {Object} props.style
@@ -28,14 +27,13 @@ import React, { useEffect, useState } from "react";
  * @param {Object} props.wrapperStyle
  * @returns {React.ReactElement}
  */
-function Switch(props) {
+const Switch = forwardRef((props, ref) => {
   const {
     checked,
     disabled,
     icon,
     name,
     onChange,
-    reference,
     value,
     tabIndex,
     label,
@@ -80,7 +78,7 @@ function Switch(props) {
       <label className={containerClassName} style={containerStyle} onClick={toggle}>
         <input
           {...rest}
-          ref={reference}
+          ref={ref}
           name={name}
           type="checkbox"
           className={className}
@@ -118,7 +116,7 @@ function Switch(props) {
       </label>
     </div>
   )
-}
+});
 Switch.defaultProps = {
   iconStyle: {
     fill: '#fff',
